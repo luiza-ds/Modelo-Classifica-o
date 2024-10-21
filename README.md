@@ -39,7 +39,7 @@ Conforme nosso gráfico, testaremos com o número 16 de vizinhos, então...
 
 E logo em seguida faremos a acurácia das previsões do meu modelo treinado com a do meu grupo teste (sem saber a resposta e nunca treinado) e assim poderemos analisar se o nosso modelo está sabendo prever adequadamente ou não.
 
-Com uma acurácia de 0.9747899 ou aproximadamente 97% estamos acertando baseado nas minhas variáveis (características do tumor) se o tumos é benigno ou maligno.
+Com uma acurácia de 0.9496 ou aproximadamente 95% estamos acertando baseado nas minhas variáveis (características do tumor) se o tumos é benigno ou maligno.
 
 **IMPORTANTE: A função scale() é uma ferramenta valiosa para normalizar dados antes de aplicar algoritmos de aprendizado de máquina. Ela garante que todas as variáveis contribuam de maneira equitativa e pode melhorar o desempenho e a eficiência dos modelos.
 
@@ -53,6 +53,36 @@ Em seguida, seus ramos irão fazer essa seleção dos melhores atributos e ir ra
 Nessa função da árvore, utilizaremos todas as variáveis menos a nossa resposta (diagnosis), usamos de método "class "utilizado para especificar que estamos construindo uma árvore de decisão para um problema de classificação e plotamos a nossa árvore em seguida:
 
 ![arvore](https://github.com/user-attachments/assets/9dd44043-678a-4f6a-9132-8b34ffbaef2f)
+
+Como visto na árvore plotada, a nossa raiz é 'concave points_mean' que corresponde ao número de partes côncavas do contorno, ele contém a variável mais relevante ou o atributo que melhor separa os dados logo no início. E em seguida, há diversos nós que percorrem um caminho que responde ao nosso modelo de previsão. As características percorreão esses nós e com uma acurácia de 93% iremos acertar se o tumor é benigno ou maligno.
+
+Seguindo o nosso código, iremos gerar previsões a partir do modelo treinado (modelo_arvore). 
+E em seguida, calcular a acurácia utilizando de média as nossa previsões acertadas no predict e ao nosso grupo teste que não tem contato com o modelo.
+Obtivemos uma acurácia de 0.9580, aproximadamente 95%.
+
+E por último iremos fazer a previsão por meio do modelo RandomForest.
+Selecionaremos a nossa variável resposta "Diagnosis" e utilizaremos todo o resto das variáveis do nosso grupo treino para ajustar nosso modelo.
+Semelhante ao modelo da árvore de decisão, iremos realizar o modelo e em seguida fazer a previsão e calcular a acurácia. 
+
+![image](https://github.com/user-attachments/assets/2beab045-caeb-4876-8f29-1138b5172610)
+
+Com uma acurácia de 0.9748 ou aproximadamente 97% nosso modelo está acertando quase 100% se o tumor é benigno ou maligno pelas características recebidas. 
+
+Ao longo do código, fomos contruindo um data frame com a porcentagem da acurácia de cada modelo e escolher o melhor para o nosso problema chamado de "resultado".
+
+
+![image](https://github.com/user-attachments/assets/4c4b8cf3-a844-4854-8ed7-989dab339c92)
+
+Com o meu código sorteando os 80% de maneira aleatória, obtivemos como o melhor modelo a floresta para o nosso objetivo. 
+
+Neste projeto, foram explorados três modelos de previsão supervisionada: KNN (k-vizinhos mais próximos), árvore de decisão e floresta aleatória, aplicados a um conjunto de dados para prever a variável diagnosis. O objetivo principal foi comparar a performance de cada modelo utilizando validação cruzada e calcular a acurácia final com o conjunto de teste.
+
+A floresta aleatória apresentou o melhor desempenho geral em termos de acurácia, graças à combinação de múltiplas árvores. No entanto, o modelo KNN teve uma vantagem em termos de simplicidade de implementação.
+
+
+
+
+
 
 
 
