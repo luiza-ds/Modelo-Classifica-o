@@ -32,15 +32,13 @@ plot(modelo) ##lugares em que o numero k (vizinhos) podem ser melhores de testar
 modelo_knn <- knn(train = scale(treino[,-1]),test = scale(teste[,-1]), cl = treino$diagnosis,k = 16)
 mean(modelo_knn == teste$diagnosis) #tirando a primeira coluna tanto do grupo de treino e teste já que é a variavel resposta
 
-
 resultados <- data.frame(modelo = "knn", acuracia = mean(modelo_knn == teste$diagnosis))
-
 
 ### modelo arvore de decisao
 modelo_arvore <- rpart(formula = diagnosis ~.,data = treino, method = "class")
 rpart.plot(modelo_arvore, extra = 101)
 
-#usando a função predict para 
+#usando a função predict
 previsao_arvore <- predict(modelo_arvore, newdata = teste, type = "class")
 acuracia_arvore <- mean(previsao_arvore ==teste$diagnosis)
 resultados <- rbind(resultados, c(modelo = "arvore", acuracia = mean(previsao_arvore ==teste$diagnosis)))
@@ -51,4 +49,7 @@ modelo_floresta <-randomForest(formula = diagnosis ~.,data = treino)
 previsa_floresta <- predict(modelo_floresta, newdata = teste, type = "class")
 acuracia_floresta <- mean(previsa_floresta == teste$diagnosis)
 resultados<- rbind(resultados, c(modelo = "floresta", acuracia = acuracia_floresta))
+
+
 resultados$acuracia <-round(as.numeric(resultados$acuracia), digits = 4)
+colnames(resultados) <- c("Modelo", "Acurácia")
