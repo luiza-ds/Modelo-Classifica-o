@@ -5,7 +5,7 @@ library(rpart.plot)
 library(randomForest)
 
 cancer <- read.csv("cancer.csv", header = T, sep = ",")
-# Tornando a coluna diagnosis como fator
+
 cancer$diagnosis <- as.factor(cancer$diagnosis)
 
 #selecionando 80% do conjunto de dados
@@ -14,10 +14,8 @@ n <- round(0.8*nrow(cancer))
 # Sorteando 80% dos dados para treino
 indices_treino <- sample(1:nrow(cancer), size = 450, replace = FALSE)
 
-#atribuindo os dados de treino
+#atribuindo para cada grupo
 treino <- cancer[indices_treino,]
-
-#atribuindo os dados de teste
 teste <- cancer[- indices_treino,]
 
 validacao_cruzada <- trainControl(method = "cv", number = 10) #cross validation
