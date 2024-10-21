@@ -44,3 +44,16 @@ Com uma acurácia de 0.9747899 ou aproximadamente 97% estamos acertando baseado 
 **IMPORTANTE: A função scale() é uma ferramenta valiosa para normalizar dados antes de aplicar algoritmos de aprendizado de máquina. Ela garante que todas as variáveis contribuam de maneira equitativa e pode melhorar o desempenho e a eficiência dos modelos.
 
 
+O próximo modelo será o da árvore de decisão: 
+Nela selecionamos o melhor atributo que melhor separa os dados em diferentes classes ou grupo, essa será a nossa raiz.
+Em seguida, seus ramos irão fazer essa seleção dos melhores atributos e ir ramificando as características até grupos maiores possuirem uma mesma características que fazem a distinção do tumor benigno ou maligno.
+
+![image](https://github.com/user-attachments/assets/6c23111e-3e7a-4058-9f48-efeed20be46c)
+
+Nessa função da árvore, utilizaremos todas as variáveis menos a nossa resposta (diagnosis), usamos de método "class "utilizado para especificar que estamos construindo uma árvore de decisão para um problema de classificação e plotamos a nossa árvore em seguida:
+
+![arvore](https://github.com/user-attachments/assets/9dd44043-678a-4f6a-9132-8b34ffbaef2f)
+
+
+
+
