@@ -1,11 +1,11 @@
+Iremos fazer um modelo de previsão supervisionado com esse banco de dados. Ou seja, obtendo uma variável resposta iremos utilizar de funções como "KNN", "Árvore de Decisão" e "RandomForest" para que com baseado nas características ele me devolva se o paciente possui um tumor benigno ou maligno. 
+
 Com o banco de dados sobre o diagnóstico de câncer (B para benigno e M para maligno) e suas características.
 
 Váriável Resposta: "diagnosis".
 
 Explicação das outras variáveis:
 A variável 'radius_mean' representa a média das distâncias do centro aos pontos no perímetro. 'Texture_mean' refere-se ao desvio padrão dos valores em escala de cinza, enquanto 'perimeter_mean' e 'area_mean indicam', respectivamente, a média do perímetro e da área. A 'smoothness_mean' mede a variação local nos comprimentos dos raios, e a 'compactness_mean' é calculada como (perímetro² / área - 1.0). Já a 'concavity_mean' avalia a severidade das partes côncavas do contorno, e 'concave points_mean' corresponde ao número de partes côncavas do contorno. A 'symmetry_mean' mede a simetria, enquanto a 'fractal dimension_mean' se refere à "aproximação da linha costeira" menos 1, uma medida de complexidade do contorno.
-
-Iremos fazer um modelo de previsão supervisionado com esse banco de dados. Ou seja, obtendo uma variável resposta iremos utilizar de funções como "KNN", "Árvore de Decisão" e "RandomForest" para que com baseado nas características ele me devolva se o paciente possui um tumor benigno ou maligno. 
 
 Começamos baixando nossos pacotes:
 
